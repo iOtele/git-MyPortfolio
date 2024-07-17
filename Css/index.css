@@ -368,7 +368,7 @@ h5{
         font-size: 1.6em;
     }
     .contact-left p i{
-        color:rgba(8, 110, 8, 0.856);
+        color: rgb(39, 14, 22);
         margin-right: 10px;
         font-size: 20px;
     }
@@ -379,12 +379,12 @@ h5{
         text-decoration: none;
         font-size: 30px;
         margin-right: 15px;
-        color: rgba(8, 110, 8, 0.856);
+        color: rgb(39, 14, 22);
         display: inline-block;
         transition: transfrom 0.5s;
     }
     .social-icons a:hover{
-        color: rgb(39, 14, 22);
+        color: rgb(51, 50, 51);
         transform: translate(2px);
     }
     .contact-left h2{
@@ -392,7 +392,7 @@ h5{
     }
  
     .btn{
-        background-color:rgb(39, 14, 22);
+        background-color:rgba(68, 68, 68, 0.7);
         display: block;
         margin: 50px auto;
         width: fit-content;
@@ -402,11 +402,11 @@ h5{
         color: #fff;
         padding: 10px 25px;
         border-radius: 30px;
-        transition: transform background 0.5s;
+        transition: transform background-color 0.5s;
     }
     
     .btn:hover{
-        border: 1px solid rgb(8, 110, 8);
+        border: 1px solid rgb(51, 50, 51);;
         background: transparent;
         transform: scale(1.2);
     }
@@ -498,11 +498,15 @@ nav .fa-solid{
     display: block;
 }
 
-@media only screen and (max-width:600px){
+@media screen and (max-width:600px){
     .hero{
-        background-image: linear-gradient(rgba(0, 0, 0,0.7),
+        background-image: linear-gradient(90deg,rgba(0, 0, 0,0.7),
         rgba(0, 0, 0,0.7),rgba(100, 0, 0,0.7)), url(/img/mobile-img.jpg);
-    }
+       }
+    .row{
+        display: flex;
+        justify-content: center;
+        }
     
     nav .logo{
         font-size: 1.5em;
@@ -526,7 +530,7 @@ nav .fa-solid{
           }
         nav ul{
             position: fixed;
-            background: #ff004f;
+            background: #301d23;
             top: 0;
             right: -150px;
             width: 150px;
@@ -549,7 +553,8 @@ nav .fa-solid{
         font-size: 40px;
        }
        .about-col-1, .about-text{
-        flex-basis: 100%;
+        text-align: center;
+        flex-basis: 50%;
        }
        .about-text h2{
         text-align: center;
@@ -566,25 +571,24 @@ nav .fa-solid{
        }
 }
 
-.scroll-container {
-    position: absolute;
-    top: 0;
-    right:20px;
-    height: 100%;
+#myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 40px; /* Place the button at the bottom of the page */
+    right: 20px; /* Place the button 30px from the right */
+    z-index: 90; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: rgb(51, 50, 51);; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 14px; /* Increase font size */
+    
   }
-
-  /* to hide the button when page first loaded */
-  .scroll-container:before {
-    content: '';
-    display: block;
-    height: 450vh;
- }
-  /* // fixed to right bottom of page */
-  .scroll-container a {
-    position: sticky;
-    top: 88vh;
-    cursor: pointer;
-    font-size: 50px;
-    color:whitesmoke ;
+  
+  #myBtn:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
   }
  

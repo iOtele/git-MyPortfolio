@@ -69,6 +69,23 @@ nav ul li a:hover{
     left: 8%;
     transform: translateY(-50%);
    }
+   .stack{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+
+   }
+   .stack-text{
+    font-size: 20px;
+    font-weight: 700;
+    color: whitesmoke;
+    font-style: italic;
+   }
+   .stack-img{
+    width: 50px;
+
+   }
    h1{
     color: white;
     margin: 20px 0px 20px ;
@@ -130,10 +147,6 @@ nav ul li a:hover{
     background: linear-gradient(rgba(0, 0, 0, 0.7),rgba(68, 68, 68, 0.7));
 }
 
-.about img{
-    height:auto;
-    width: 350px;
-}
 
 .about-text{
     flex-basis: 50%;
@@ -141,6 +154,7 @@ nav ul li a:hover{
 
 .about-col-1{
     flex-basis: 35%;
+    padding-top: 50px;
 }
 .about-col-1 img{
     width: 100%;
@@ -512,16 +526,27 @@ nav .fa-solid{
         font-size: 1.5em;
     }
     h1{
-        font-size: 35px;
+        font-size: 40px;
+       }
+       .stack{
+        display: flex;
+        justify-content: space-between;
+       }
+       .stack-text{
+        font-size: 15px;
+       }
+       .stack-img{
+        width: 30px;
+    
        }
        h3{
-        font-size: 20px;
+        font-size: 30px;
        }
        h4{
-        font-size: 10px;
+        font-size: 20px;
        }
        .newslatter form{
-        width: 260px;
+        width: 280px;
         }
         nav .fa-solid{
             font-size: 25px;

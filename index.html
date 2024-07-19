@@ -31,8 +31,8 @@
         <i class="fa-solid fa-bars" onclick="openmenu()"></i>
       </nav>
       <div class="content">
-        <h4>Hello, my name is</h4>
-        <h1>Olalekan <span> Otele</span></h1>
+        <h4>Hello, I'm</h4>
+        <h1><span>Olalekan </span>Otele</h1>
         <h3>Front-end Engineer.</h3>
 
         <div class="stack">
@@ -53,7 +53,7 @@
               type="email"
               name="Email"
               id="mail"
-              placeholder="Enter Your Email, I Will Write You. Thank You"
+              placeholder="Please, Enter Your Email"
             />
             <input type="submit" value="Let's start" />
           </form>
@@ -268,7 +268,7 @@
                 ><i class="fa-brands fa-whatsapp"></i
               ></a>
             </div>
-            <a href="img/Olalekan Otele Resume.pdf" download class="btn btn2"
+            <a href="img/Olalekan Otele Resume.pdf" download class="btn"
               >Downlaod Resume</a
             >
           </div>
@@ -287,14 +287,16 @@
                 placeholder="Your Message"
                 id="textarea"
               ></textarea>
-              <button type="submit" class="btn btn2">Submit</button>
+              <button type="submit" class="btn">Submit</button>
             </form>
             <span id="msg"></span>
           </div>
         </div>
       </div>
     </section>
-
+    <button onclick="topFunction()" id="myBtn" title="Go to top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
     <!-----------footer start------>
     <footer>
       <p>Olalekan Otele</p>
@@ -317,10 +319,31 @@
     </footer>
 
     <script>
-      // Get the button:
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbySPrGQckh54fLSPMP9P3pCwRCv7oE3B_QVIAkOYZa87SAzpvnugT3tby-okLMXOis-/exec";
+      const form = document.forms["submit-to-google-sheet"];
+      const msg = document.getElementById("msg");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(scriptURL, {
+          method: "POST",
+          body: new FormData(form),
+        })
+          .then((response) => {
+            msg.innerHTML = "Message sent successfully";
+            setTimeout(() => {
+              msg.innerHTML = "";
+            }, 1000);
+            form.reset();
+          })
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
+
+    <script>
       let mybutton = document.getElementById("myBtn");
 
-      // When the user scrolls down 20px from the top of the document, show the button
       window.onscroll = function () {
         scrollFunction();
       };
@@ -336,10 +359,9 @@
         }
       }
 
-      // When the user clicks on the button, scroll to the top of the document
       function topFunction() {
-        document.body.scrollTop = 0; // For Safari
-        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
       }
     </script>
 
@@ -348,16 +370,17 @@
       var tabcontents = document.getElementsByClassName("tab-contents");
 
       function opentab(tabname) {
-        for (tablink of tablinks) {
+        for (let tablink of tablinks) {
           tablink.classList.remove("active-link");
         }
-        for (tabcontent of tabcontents) {
+        for (let tabcontent of tabcontents) {
           tabcontent.classList.remove("active-tab");
         }
         event.currentTarget.classList.add("active-link");
         document.getElementById(tabname).classList.add("active-tab");
       }
     </script>
+
     <script>
       var sidemenu = document.getElementById("sidemenu");
 
@@ -367,26 +390,6 @@
       function closemenu() {
         sidemenu.style.right = "-200px";
       }
-    </script>
-
-    <script>
-      const scriptURL =
-        "https://script.google.com/macros/s/AKfycbySPrGQckh54fLSPMP9P3pCwRCv7oE3B_QVIAkOYZa87SAzpvnugT3tby-okLMXOis-/exec";
-      const form = document.forms["submit-to-google-sheet"];
-      const msg = document.getElementById("msg");
-
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        fetch(scriptURL, { method: "POST", body: new FormData(form) })
-          .then((response) => {
-            msg.innerHTML = "Message sent successfully";
-            setTimeout(function () {
-              msg.innerHTML = "";
-            }, 3000);
-            form.reset();
-          })
-          .catch((error) => console.error("Error!", error.message));
-      });
     </script>
   </body>
 </html>

@@ -580,7 +580,7 @@ nav .fa-solid {
   .about-col-1,
   .about-text {
     text-align: center;
-    flex-basis: 0%;
+    flex-basis: 100%;
   }
   .about-col-1 img {
     width: 100%;
@@ -591,6 +591,7 @@ nav .fa-solid {
   .about-col-1 {
     margin-bottom: 30px;
   }
+
   .tab-links {
     font-size: 1em;
     margin-right: 20px;
